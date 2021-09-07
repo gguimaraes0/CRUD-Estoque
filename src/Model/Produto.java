@@ -14,9 +14,11 @@ public class Produto {
 	private String Valor_pago;
 	private String Valor_margem;
 	private String Preco_sugerido;
-	private String[] colunas = new String[] { "codigo", "data_entrada", "local_compra", "tipo", "marca",
-			"caracteristicas", "tamanho", "cor", "valor_etiqueta", "valor_pago", "valor_margem", "preco_sugerido" };
 
+	public Produto() {
+		
+	}
+	
 	public Produto(String codigo) {
 		this.Codigo = codigo;
 	}
@@ -118,17 +120,9 @@ public class Produto {
 		this.Preco_sugerido = preco_sugerido;
 	}
 
-	public String[] getColunas() {
-		return colunas;
-	}
-
-	public void setColunas(String[] Colunas) {
-		this.colunas = Colunas;
-	}
-
 	public void ImprimirProduto() {
 		System.out.printf(
-				"Código: %s | Data de Entrada: %s | Local da Compra: %s | Tipo: %s | Marca: %s | Caracteristicas: %s | Tamanho: %s | Cor: %s | Valor Etiqueta: %s | Valor Pago: %s | Valor Margem: %s | Preço Sugerido: %s",
+				"Código: %s | Data de Entrada: %s | Local da Compra: %s | Tipo: %s | Marca: %s | Caracteristicas: %s | Tamanho: %s | Cor: %s | Valor Etiqueta: %s | Valor Pago: %s | Valor Margem: %s | Preço Sugerido: %s \n",
 				new Object[] { getCodigo(), getDtEntrada(), getLocalCompra(), getTipo(), getMarca(),
 						getCaracteristicas(), getTamanho(), getCor(), getValorEtiqueta(), getValorPago(),
 						getValorMargem(), getPrecoSugerido() });

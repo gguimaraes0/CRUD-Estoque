@@ -10,21 +10,24 @@ import com.google.gson.Gson;
 
 import java.io.FileWriter; // Import the FileWriter class
 import java.io.IOException; // Import the IOException class to handle errors
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class ProdutoDAO {
 	public void Salvar(ArrayList<Produto> listaProdutos) {
 		String estoque = "";
 
 		for (Produto item : listaProdutos) {
-			estoque = estoque + item.produtoParaString();
+			estoque += item.produtoParaString();
 		}
+		
 		try {
-			File myObj = new File("C:\\Users\\gusta\\eclipse-workspace\\CRUD-Estoque\\src\\estoque.txt");
+			File myObj = new File("estoque.txt");
 
 			if (myObj.createNewFile())
 				System.out.println("Arquivo Criado: " + myObj.getName());
 
-			FileWriter myWriter = new FileWriter("C:\\Users\\gusta\\eclipse-workspace\\CRUD-Estoque\\src\\estoque.txt");
+			FileWriter myWriter = new FileWriter("estoque.txt");
 			myWriter.write(estoque);
 			myWriter.close();
 			System.out.println("Estoque salvo com sucesso!");
@@ -34,31 +37,15 @@ public class ProdutoDAO {
 		}
 	}
 
-	public void SalvarProduto(Produto produto) {
-
-		ArrayList<Produto> listaProdutos = new ArrayList<Produto>();
-
-		if (Buscar(produto.getCodigo()) == null) {
-			listaProdutos.add(produto);
-			Salvar(listaProdutos);
-		}
-	}
-
-	public void Deletar(Produto produto) {
-
-		ArrayList<Produto> listaProdutos = new ArrayList<Produto>();
-		listaProdutos = ListarTodos();
-
+	public void Deletar(String codigo, ArrayList<Produto> listaProdutos) {
 		for (Produto item : listaProdutos) {
-			if (item.getCodigo().equals(produto.getCodigo())) {
+			if (item.getCodigo().equals(codigo)) {
 				listaProdutos.remove(item);
-			}
-			Salvar(listaProdutos);
-
-			System.out.println("Produto foi removido!");
-			return;
+				System.out.println("Produto foi removido!");
+				Salvar(listaProdutos);
+				return;
+			}			
 		}
-
 		System.out.println("Produto não foi encontrado!");
 	}
 
@@ -101,7 +88,7 @@ public class ProdutoDAO {
 			ArrayList<Produto> listaProdutos = new ArrayList<Produto>();
 			Produto produto;			
 			
-			File myObj = new File("C:\\Users\\gusta\\eclipse-workspace\\CRUD-Estoque\\src\\estoque.txt");
+			File myObj = new File("estoque.txt");
 			@SuppressWarnings("resource")
 			Scanner myReader = new Scanner(myObj);
 			while (myReader.hasNextLine()) {
