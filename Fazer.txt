@@ -1,0 +1,8 @@
+fazer editar
+reestruturar salvamento
+reestruturar listagem
+deixar caminho generico 
+reformular layout console geral
+padronizar metodos
+criar mais classes para não sobrecarregar a main
+transformar o txt em json
