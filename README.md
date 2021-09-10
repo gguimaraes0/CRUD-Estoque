@@ -24,9 +24,8 @@ Entendido o problema acima, construa uma aplicação em Java que resolva o probl
 
 ## 👨‍💻 Participantes
 
-<br>Caio Foramiglio Vieira - 081190043 </br>
-<br>Guilherme Simon Lehr - 081190002 </br>
-<br>Gustavo Santos Guimarães - 081180013 </br>
-<br>Lucas Frias Oliveira - 081190009 </br>
-<br>Marcio Rios Kunimura - 081200041 </br>
-<br>Matheus Faria Sarquis - 081190031</br>
+- Caio Foramiglio Vieira - 081190043 
+- Guilherme Simon Lehr - 081190002 
+- Gustavo Santos Guimarães - 081180013
+- Lucas Frias Oliveira - 081190009 
+- Matheus Faria Sarquis - 081190031
