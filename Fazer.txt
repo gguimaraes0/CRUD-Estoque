@@ -1,2 +1,0 @@
-reformular layout console geral
-padronizar metodos
